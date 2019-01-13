@@ -49,12 +49,11 @@ This may be found on the Azure resource overview blade in the format <servername
 
 ################################################################################
 #>
-Param( [string] $azpguser,
-       [string] $azpgsql )
-<#
-$azpguser = "<replace with user name>"
-$azpgsql  = "<replace with azure name>"
-#>
+Param( [string]$azpguser,
+       [string]$azpgsql )
+
+if ($azpguser -eq "") {$azpguser = Read-Host "Azure PostgreSQL Username: "}
+if ($azpgsql  -eq "") {$azpgsql  = Read-Host "Azure PostgreSQL FQDN: "}
 
 $password = "Passw0rd0000"
 $database = "sampledb"
