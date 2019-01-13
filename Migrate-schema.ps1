@@ -1,4 +1,4 @@
-<# Migrate-Schema.ps1
+﻿<# Migrate-Schema.ps1
 
 .Synopsis
 Create SQL file with the code for postgres schema and imports it.
@@ -49,11 +49,12 @@ This may be found on the Azure resource overview blade in the format <servername
 
 ################################################################################
 #>
-Param( [string]$Team,
-       [string]$Tool )
-
+Param( [string] $azpguser,
+       [string] $azpgsql )
+<#
 $azpguser = "<replace with user name>"
 $azpgsql  = "<replace with azure name>"
+#>
 
 $password = "Passw0rd0000"
 $database = "sampledb"
